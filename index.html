@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Karsten Formula Widget</title>
+    </head>
+    <body>
+        <h4>Karsten's Formula</h4>
+        <p>
+            <label for="format-select">Format</label>
+            <select name="format" id="format-select">
+                <option value="">-- Select a format --</option>
+                <option value="default">Canadian Highlander, European Highlander, Gladiator</option>
+                <option value="aus">7 Point Highlander</option>
+                <option value="edh">Commander</option>
+            </select>
+        </p>
+        <div id="input-group" hidden>
+            <p>
+                <label for="avgmv">Average Mana Value</label>
+                <input id="avgmv" name="avgmv" type="number" value ="0" min="0" max="20" step="0.01">
+            </p>
+            <p>
+                <label for="draw">Card Draw</label>
+                <input id="draw" name="draw" type="number" value="0" min="0" max="100" step="1">
+            </p>
+            <p>
+                <label for="ramp">Ramp</label>
+                <input id="ramp" name="ramp" type="number" value="0" min="0" max="100" step="1">
+            </p>
+            <p>
+                <label for="fast">Fast Mana</label>
+                <input id="fast" name="fast" type="number" value="0" min="0" max="100" step="1">
+            </p>
+            <p>
+                <label for="mdfc1">Untapped MDFCs</label>
+                <input id="mdfc1" name="mdfc1" type="number" value="0" min="0" max="100" step="1">
+            </p>
+            <p>
+                <label for="mdfc2">Tapped MDFCs</label>
+                <input id="mdfc2" name="mdfc2" type="number" value="0" min="0" max="100" step="1">
+            </p>
+    
+            <p id="edhGroup" hidden>
+                <label for="commanders">Commanders</label>
+                <input id="commanders" name="commanders" required type="number" value="1" min="1" max="2" step="1">
+            </p>
+    
+            <p id="ausGroup" hidden>
+                <label for="companion">Companions</label>
+                <input id="companion" name="companion" type="number" value="0" min="0" max="1" step="1">
+            </p>
+    
+            <p>
+                <button type="button" id="calc">Calculate</button>
+            </p>
+    
+            <p>
+                <span id="output" hidden></span>
+            </p>
+        </div>
+        <script src="./formulaWidget.js"></script>
+    </body>
+</html>
