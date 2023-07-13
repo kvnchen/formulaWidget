@@ -28,3 +28,9 @@ body {
     font-size: 0.75em;
     float: right;
 }
+
+button {
+    width: 4vw;
+    height: 4vh;
+    font-size: 0.75em;
+}
