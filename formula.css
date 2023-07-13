@@ -4,8 +4,8 @@ body {
 }
 
 #container {
-    width: min(75vw, 600px);
-    height: min(75vh, 600px);
+    width: min(75vw, 810px);
+    height: min(75vh, 1755px);
     font-size: 1.3em;
 }
 
@@ -19,7 +19,7 @@ body {
 }
 
 #input-group {
-    width: min(75vw, 462px);
+    width: min(75vw, 713px);
 }
 
 #input-group input {
@@ -30,7 +30,7 @@ body {
 }
 
 button {
-    width: 4vw;
-    height: 4vh;
+    width: min(8vw, 102px);
+    height: min(4vw, 36px);
     font-size: 0.75em;
 }
