@@ -4,9 +4,9 @@ body {
 }
 
 #container {
-    width: min(75vw, 810px);
-    height: min(75vh, 1755px);
-    font-size: 1.3em;
+    width: min(90vw, 972px);
+    height: min(90vh, 2106px);
+    font-size: 2em;
 }
 
 #reference {
@@ -30,7 +30,7 @@ body {
 }
 
 button {
-    width: min(8vw, 102px);
+    width: min(12vw, 130px);
     height: min(4vw, 36px);
     font-size: 0.75em;
 }
