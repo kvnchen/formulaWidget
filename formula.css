@@ -1,0 +1,30 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    width: 20vw;
+    height: 64vh;
+    font-size: 1.3em;
+}
+
+#reference {
+    margin-bottom: 2em;
+}
+
+#container select {
+    height: 1.8em;
+    font-size: 0.75em;
+}
+
+#input-group {
+    width: 13vw;
+}
+
+#input-group input {
+    height: 1.3em;
+    width: 4em;
+    font-size: 0.75em;
+    float: right;
+}
