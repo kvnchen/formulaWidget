@@ -31,6 +31,6 @@ body {
 
 button {
     width: min(16vw, 173px);
-    height: min(6vw, 140px);
+    height: min(4vw, 94px);
     font-size: 0.75em;
 }
