@@ -4,8 +4,8 @@ body {
 }
 
 #container {
-    width: 32vw;
-    height: 64vh;
+    width: min(75vw, 600px);
+    height: min(75vh, 600px);
     font-size: 1.3em;
 }
 
@@ -19,7 +19,7 @@ body {
 }
 
 #input-group {
-    width: 18vw;
+    width: min(75vw, 462px);
 }
 
 #input-group input {
