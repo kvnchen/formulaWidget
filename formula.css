@@ -6,7 +6,7 @@ body {
 #container {
     width: min(90vw, 972px);
     height: min(90vh, 2106px);
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 #reference {
