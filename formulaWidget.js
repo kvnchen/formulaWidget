@@ -18,34 +18,39 @@ function karsten(avgmv, draw, ramp, fast, mdfc1, mdfc2, format, commanders) {
 
     switch (format) {
         case 'aus':
-            return (19.59  + (1.90 * avgmv) - (0.28 * (ramp + draw)) - fast - (0.74 * mdfc1) - (0.38 * mdfc2) + (0.27 * (commanders || 0))).toPrecision(4);
+            output = (19.59 + (1.90 * avgmv) - (0.28 * (ramp + draw)) - fast - (0.74 * mdfc1) - (0.38 * mdfc2) + (0.27 * (commanders || 0))).toPrecision(4);
+            break;
         case 'edh':
             output = (((100 - commanders) / 60) * (19.59 + (1.90 * avgmv) + (0.27 * commanders)) - (0.28 * (ramp + draw)) - fast - (0.74 * mdfc1) - (0.38 * mdfc2) - 1.35).toPrecision(4);
+            break;
+        case 'lim':
+            output = ((40 / 60) * (19.59 + (1.90 * avgmv) - (0.28 * (ramp + draw)) - fast - (0.74 * mdfc1) - (0.38 * mdfc2) + (0.27 * (commanders || 0)))).toPrecision(4);
             break;
         case 'can':
         case 'gla':
         case 'eur':
         default:
-            return (32.65 + (3.16 * avgmv) - (0.28 * (ramp + draw)) - fast - (0.74 * mdfc1) - (0.38 * mdfc2)).toPrecision(4);
+            output = (32.65 + (3.16 * avgmv) - (0.28 * (ramp + draw)) - fast - (0.74 * mdfc1) - (0.38 * mdfc2)).toPrecision(4);
+            break;
     }
     return output;
 }
 
 function toggleInputs(e) {
     const inputGroup = document.getElementById('input-group');
-    const edhGroup = document.getElementById('edhGroup');
-    const ausGroup = document.getElementById('ausGroup');
+    const commanders = document.getElementById('commandersInput');
+    const companion = document.getElementById('companionInput');
     const output = document.getElementById('output');
 
     inputGroup.hidden = true;
-    edhGroup.hidden = true;
-    ausGroup.hidden = true;
+    commanders.hidden = true;
+    companion.hidden = true;
     output.hidden = true;
 
     if (e.target.value === 'edh') {
-        edhGroup.hidden = false;
-    } else if (e.target.value === 'aus') {
-        ausGroup.hidden = false;
+        commanders.hidden = false;
+    } else if (e.target.value === 'aus' || e.target.value === 'lim') {
+        companion.hidden = false;
     }
     if (e.target.value !== '') {
         inputGroup.hidden = false;
@@ -69,7 +74,7 @@ function calculate() {
         if (format === 'edh') {
             args.push(Number(document.getElementById('commanders').value));
         }
-        if (format === 'aus') {
+        if (format === 'aus' || format === 'lim') {
             args.push(Number(document.getElementById('companion').value));
         }
     
