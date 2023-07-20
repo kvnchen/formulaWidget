@@ -89,7 +89,7 @@ function calculate() {
 
 if (window.location !== window.parent.location) {
     const container = document.getElementById('container');
-    container.style = 'font-size: 1.2em';
+    container.style = 'font-size: 1em';
 }
 
 const select = document.getElementById('format-select');
