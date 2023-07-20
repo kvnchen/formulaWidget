@@ -89,7 +89,12 @@ function calculate() {
 
 if (window.location !== window.parent.location) {
     const container = document.getElementById('container');
-    container.style = 'font-size: 1em';
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        container.style = 'font-size: 1em';
+    } else {
+        container.style = 'font-size: 1.3em';
+    }
 }
 
 const select = document.getElementById('format-select');
