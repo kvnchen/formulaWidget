@@ -87,6 +87,11 @@ function calculate() {
     }
 }
 
+if (window.location !== window.parent.location) {
+    const container = document.getElementById('container');
+    container.style = 'font-size: 1.4em';
+}
+
 const select = document.getElementById('format-select');
 select.addEventListener('change', toggleInputs, false);
 

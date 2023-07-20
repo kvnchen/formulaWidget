@@ -6,7 +6,7 @@ body {
 #container {
     width: min(90vw, 972px);
     height: min(90vh, 2106px);
-    font-size: 1.1em;
+    font-size: 2em;
 }
 
 #reference {
@@ -30,6 +30,6 @@ body {
 }
 
 button {
-    height: min(5vh, 117px);
-    font-size: 0.75em;
+    /* height: min(5vh, 117px); */
+    font-size: 0.8em;
 }
