@@ -4,6 +4,7 @@ An interactive widget of Frank Karsten's formula for calculating how many lands 
 
 This widget was created as an interactive supplement to an article I wrote on how to build manabases in singleton formats, which you can read [here](https://www.canadianhighlander.ca/2023/07/17/how-to-build-a-manabase-for-singleton-formats/).
 
+You can find Frank Karsten's original article [here](https://www.channelfireball.com/article/how-many-lands-do-you-need-in-your-deck-an-updated-analysis/cd1c1a24-d439-4a8e-b369-b936edb0b38a/).
 
 ## Usage
 
