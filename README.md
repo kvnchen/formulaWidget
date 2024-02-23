@@ -1,6 +1,6 @@
 ## Overview
 
-An interactive widget of Frank Karsten's formula for calculating how many lands you need in your deck. It supports multiple formats through small adjustments to each formula based on the particular details of each format, such as minimum deck size, maximum copies, mulligans, etc.
+An interactive widget of Frank Karsten's formula for calculating how many lands you need in your deck. It supports multiple formats through small adjustments to each formula based on the particular details of each format, such as minimum deck size, presence of sideboard, mulligans, etc.
 
 This widget was created as an interactive supplement to an article I wrote on how to build manabases in singleton formats, which you can read [here](https://www.canadianhighlander.ca/2023/07/17/how-to-build-a-manabase-for-singleton-formats/).
 
@@ -10,7 +10,30 @@ This widget was created as an interactive supplement to an article I wrote on ho
 After selecting a format from the dropdown, for each category simply enter the quantity or value contained within your deck, then hit "Calculate".
 
 
-## Background
+## Exact Formulas
+
+#### Canlander, European Highlander and Gladiator
+
+> Number of lands = 32.65 + (3.16 * avgmv) - (0.28 * (ramp + draw)) - fast - (0.74 * mdfc1) - (0.38 * mdfc2)
+
+where:
+
+- avgmv: the average mana value of your deck (total mana value / number of spells)
+- ramp : nonland cards with mv<=2 that produce mana at some cost
+- draw: nonland cards with mv<=2 that draw one or more cards
+- fast : nonland cards that produce mana at no additional cost
+- mdfc1: MDFCs that can enter untapped
+- mdfc2: MDFCs that always enter tapped
+
+
+#### Commander
+
+> ((100 - commanders) / 60) * (19.59 + (1.90 * avgmv) + (0.27 * commanders)) - (0.28 * (ramp + draw)) - fast - (0.74 * mdfc1) - (0.38 * mdfc2) - 1.35
+
+
+#### 7 Point Highlander, 60 card formats
+
+> 19.59 + (1.90 * avgmv) - (0.28 * (ramp + draw)) - fast - (0.74 * mdfc1) - (0.38 * mdfc2) + (0.27 * companion)
 
 
 ## Glossary
@@ -37,4 +60,14 @@ Karsten defines cheap ramp as nonland cards with mana value two or less that can
 Fast mana is defined here as nonland cards that cost 0 and can repeatedly produce mana at no additional cost, with little to no restriction. Being essentially free, these cards can directly replace a land, and mostly comprise of artifacts such as the five moxen, Mana Crypt, and Chrome Mox.
 
 
+**Untapped MDFCs** and **Tapped MDFCs**
+
+These refer to Modal Double-Faced Cards (MDFCs). Those option to enter untapped, such as Emeria's Call, count as 0.74 lands in the formulas.
+
+MDFCs that always enter tapped like Spikefield Hazard count as 0.38 lands.
+
+
+**Companions** and **Commanders**
+
+For formats with sideboards, companions add 0.27 to the required land count. Commanders are treated as similarly.
 
